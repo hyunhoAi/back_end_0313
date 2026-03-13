@@ -5,7 +5,7 @@ name: Spring Boot Maven CI/CD
 on:
   push:
     branches:
-		- main
+      - main
   # 수동으로 Action 실행할 수 있게 해주는 옵션
   workflow_dispatch:
 
@@ -41,7 +41,7 @@ jobs:
           username: root
           key: ${{ secrets.PRIVATE_SSH_KEY }}
           source: |
-            build/libs/*SNAPSHOT.jar
+            target/*SNAPSHOT.jar
           target: /root/app/
           
       # deploy 스크립트 파일을 퍼블릭 서버로 전달
